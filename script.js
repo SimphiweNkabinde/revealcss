@@ -1,6 +1,13 @@
 let animationSpeed = 'normal';
+let component;
+let innerContent;
 
 
+window.onload = () => {
+    component = document.getElementById('scroll-animations-component');
+    innerContent = component.innerHTML;
+    loadAnimation()
+}
 
 function setSpeed(event) {
     switch (event.target.value) {
@@ -28,10 +35,14 @@ function setAnimation(direction) {
 }
 
 function reloadComponent() {
-    const component = document.getElementById('scroll-animations-component');
-    const innerContent = component.innerHTML;
+    //set visibility to hidden for all animation boxes
+    document.querySelectorAll('.animation-box').forEach(box => {
+        box.style.visibility = 'hidden';
+    })
 
     //clear component
     component.innerHTML = "";
     component.innerHTML = innerContent;
+
+    loadAnimation()
 }
