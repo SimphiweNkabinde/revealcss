@@ -1,4 +1,4 @@
 # slidesimple-webpage
-The webpage for the SlideSimple CSS/JavaScript Library
+The webpage for reveal.css Library
 
-https://simphiwe-nkabinde.github.io/slidesimple-webpage/
+https://simphiwenkabinde.github.io/reveal.css

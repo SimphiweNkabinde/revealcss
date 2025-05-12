@@ -1,163 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A lightweight CSS library for CSS animations "
+    />
+    <meta name="author" content="Simpihwe Nkabinde" />
+    <meta property="og:title" content="Reveal.css" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://simphiwenkabinde.github.io/revealcss"
+    />
+    <!-- LOCAL ASSESTS -->
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <script src="scripts/main.js" defer></script>
+    <!-- REVEAL.CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/simphiwenkabinde/reveal.css@1.0.0/reveal.min.css"
+    />
+    <!-- HIGHLIGHT JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>Reveal.css</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/slide-simple-library/slidesimple.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./assets/slide-simple-library/slidesimple.js"></script>
-    <script src="./script.js"></script>
-    <link rel="icon" type="image/x-icon" href="./img/icon.png">
-    <title>Slide Simple</title>
-</head>
-
-<body class="pb-3">
-    <header class="text-center mb-5 pt-2 container">
-        <h1 class="display-4 fw-bold text-purple ss-bottom">Slide Simple</h1>
-        <p class="text-lightgray text-center lead">A light CSS and JavaScript library for simple slide-in & fade-in transition animations.</p>
+  <body>
+    <header class="header">
+      <a href="/" class="header__brand gradient-text fade-in-right"
+        >reveal.css</a
+      >
+      <nav class="header__nav fade-in-left">
+        <a class="header__nav-link" href="#usage">usage</a>
+        <a class="header__nav-link" href="#install">install<small>(v1.0.0)</small>
+        </a>
+      </nav>
+      <a
+        class="header__nav-link"
+        target="_blank"
+        aria-label="Github"
+        href="https://github.com/SimphiweNkabinde/reveal.css"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          fill="currentColor"
+          class="bi bi-github"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+          />
+        </svg>
+      </a>
     </header>
-    <section>
-        <div class="animation-container container p-5 mt-3">
-            <p class="text-center text-dark">Use these css classes to slide-in/fade-in elements when the page loads</p>
-            <div class="text-center mb-3">
-                <code>ss-{right,left,top,bottom,center}</code> <span class="text-muted">(for normal speed)</span><br>
-                <code>ss-{right,left,top,bottom,center}-{slow,fast}</code>              
-            </div>
-            <div id="box-2" class="shadow rounded-3 bg-light m-auto ss-top">
-                <div id="box-1" class="animation-box"></div>
-            </div>
-            <div class="text-center my-1">
-                <code class="p-2 rounded-3" id="animation-code">class="ss-top"</code>
-            </div>
-
-            <div class="slidecontainer text-center my-3 ss-center-slow">
-                <p class="text-secondary m-0">Speed</p>
-                <input onchange="setSpeed(event)" type="range" min="1" max="3" value="2" class="slider shadow"
-                    id="myRange">
-                <div class="d-flex justify-content-between range-label text-darkgray">
-                    <span>slow</span>
-                    <span>normal</span>
-                    <span>fast</span>
-                </div>
-            </div>
-
-            <div id="direction-wrapper" class="d-flex justify-content-evenly flex-wrap">
-                <button onclick="setAnimation('left')" class="btn btn-sm btn-primary m-2"><i
-                        class="bi bi-arrow-left"></i> left</button>
-                <button onclick="setAnimation('right')" class="btn btn-sm btn-primary m-2">right <i
-                        class="bi bi-arrow-right"></i></button>
-                <button onclick="setAnimation('top')" class="btn btn-sm btn-primary m-2">top <i
-                        class="bi bi-arrow-up"></i></button>
-                <button onclick="setAnimation('bottom')" class="btn btn-sm btn-primary m-2">bottom <i
-                        class="bi bi-arrow-down"></i></button>
-                <button onclick="setAnimation('center')" class="btn btn-sm btn-primary m-2">center <i
-                        class="bi bi-arrows-fullscreen"></i></button>
-            </div>
-        </div>
-    </section>
-    <section  class="mt-5">
-        <div class="animation-container container p-5 mt-3 text-center">
-            <p class="text-dark text-center">
-                Use these classes to slide-in/fade-in an element when it is <span class="text-danger">scrolled on</span> or 
-                is in view
-            </p>
-            <div class="text-center">
-                <div class="text-center">
-                    <code>ss-onscroll-{right,left,top,bottom,center}</code> <span class="text-muted">(for normal speed)</span><br>
-                    <code>ss-onscroll-{right,left,top,bottom,center}-{slow,fast}</code>              
-                </div>
-            </div>
-            <div class="my-2">
-                <button onclick="reloadComponent()" class="btn btn-primary rounded-circle">
-                    <i class="bi bi-arrow-counterclockwise"></i>
-                </button>
-            </div>
-            <div id="scroll-animations-component">
-                <code class="fs-3">ss-onscroll-*</code>
-                <div class="d-flex justify-content-around">
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-right-slow animation-box"></div>
-                        <code>*-right-slow</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-right animation-box"></div>
-                        <code class="small">*-right</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-right-fast animation-box"></div>
-                        <code>*-right-fast</code>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-left-slow animation-box"></div>
-                        <code>*-left-slow</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-left animation-box"></div>
-                        <code class="small">*-left</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-left-fast animation-box"></div>
-                        <code>*-lefft-fast</code>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-top-slow animation-box"></div>
-                        <code>*-top-slow</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-top animation-box"></div>
-                        <code class="small">*-top</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-top-fast animation-box"></div>
-                        <code>*-top-fast</code>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-bottom-slow animation-box"></div>
-                        <code>*-bottom-slow</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-bottom animation-box"></div>
-                        <code class="small">*-bottom</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-bottom-fast animation-box"></div>
-                        <code>*-bottom-fast</code>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-center-slow animation-box"></div>
-                        <code>*-center-slow</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-center animation-box"></div>
-                        <code>*-center</code>
-                    </div>
-                    <div class="animation-box-wrapper">
-                        <div class="ss-onscroll-center-fast animation-box"></div>
-                        <code>*-center-fast</code>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <footer class="text-center text-lightgray mt-3">
-        <p><i class="bi bi-download"></i> 
-            Download from <a href="https://github.com/simphiwe-nkabinde/slidesimple-css-library">Github Repo</a>
+    <main class="main">
+      <section class="section section--hero fade-in-top">
+        <h1 class="section__h1">
+          Add
+          <span class="gradient-text fade-in-top slow"
+            >graceful animations</span
+          >
+          to your web pages
+        </h1>
+        <p>A lightweight CSS library for CSS animations.</p>
+        <p>
+          reveal.css allows you to easily add simple but graceful animations to
+          your project by using simple classnames on the elements you want
+          animated
         </p>
-        <p class="m-0">Created By <a class="text-decoration-none" href="#">Simphiwe Nkabinde</a></p>
+        <button onclick="window.location ='#usage'">Get Started</button>
+      </section>
+      <section id="usage" class="section section--usage">
+        <h2 class="section__h2">Usage</h2>
+        <p class="section__description">
+          Adding any of the <strong>reveal.css</strong> animation classes to an
+          element tag will apply animation styling to that element.
+        </p>
+        <article class="section__article feature">
+          <h3 id="fade-animation" class="feature__h3">Fade</h3>
+          <p class="feature_intro-p">
+            The fade animation includes <code>fade-in</code> and
+            <code>fade-out</code> classnames with modifiers for specifying the
+            animation's direction.
+          </p>
+          <p class="feature__notation">
+            <strong>Notation: </strong
+            ><code>fade-{in/out}-{left/right/top/bottom}</code>
+          </p>
+          <p class="text-center"><strong>Examples</strong></p>
+          <div class="feature__demo">
+            <div class="feature-demo__item">
+              <img src="images/fade-in.gif" alt="fade in animation" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="fade-in"&gt;fade in&lt;/h1&gt;</code></pre>
+            </div>
+            <div class="feature-demo__item">
+              <img src="images/fade-in-left.gif" alt="" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="fade-in-left"&gt;fade in left&lt;/h1&gt;</code></pre>
+            </div>
+            <div class="feature-demo__item">
+              <img src="images/fade-out-right.gif" alt="" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="fade-out-right"&gt;fade out right&lt;/h1&gt;</code></pre>
+            </div>
+          </div>
+        </article>
+        <article class="section__article feature">
+          <h3 id="flip-animation" class="feature__h3">Flip</h3>
+          <p class="feature_intro-p">
+            The flip animation includes <code>flip-in</code> and
+            <code>flip-out</code> classnames with modifiers for specifying the
+            animation's direction.
+          </p>
+          <p class="feature__notation">
+            <strong>Notation: </strong><code>flip-{in/out}-{x/y}</code>
+          </p>
+          <p class="text-center"><strong>Examples</strong></p>
+          <div class="feature__demo">
+            <div class="feature-demo__item">
+              <img src="images/flip-in-x.gif" alt="" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="flip-in-x"&gt;flip in x&lt;/h1&gt;</code></pre>
+            </div>
+            <div class="feature-demo__item">
+              <img src="images/flip-in-y.gif" alt="" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="flip-in-y"&gt;flip in y&lt;/h1&gt;</code></pre>
+            </div>
+            <div class="feature-demo__item">
+              <img src="images/flip-out-x.gif" alt="" />
+              <pre
+                class="feature-demo__pre"
+              ><code>&lt;h1 class="flip-out-x"&gt;flip out x&lt;/h1&gt;</code></pre>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="install" class="section section--install">
+        <h2 class="section__h2">Install</h2>
+        <p class="section__description">
+          Install this animation library and start adding animations to your
+          project. <br />
+          <strong>version 1.0.0</strong>
+        </p>
+        <div class="installation-method">
+          <h3>Download</h3>
+          <p class="installation-method__description">
+            Download the ready-to-use source code to easily drop into your
+            project.
+          </p>
+          <a
+            class="button button--bold"
+            href="https://github.com/SimphiweNkabinde/reveal.css/archive/refs/tags/v1.0.0.zip"
+            >download</a
+          >
+        </div>
+        <div class="installation-method">
+          <h3>CDN</h3>
+          <p class="installation-method__description">
+            Include this link tag in the head of your html file.
+          </p>
+          <pre>
+<code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/simphiwenkabinde/reveal.css@1.0.0/reveal.min.css"&gt;</code>
+          </pre>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>
+        created by
+        <a href="https://github.com/simphiwenkabinde">Simphiwe Nkabinde</a>
+      </p>
     </footer>
-
-</body>
-
+  </body>
 </html>
